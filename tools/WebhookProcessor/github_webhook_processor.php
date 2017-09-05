@@ -269,6 +269,7 @@ function auto_update($payload){
 		return;
 	
 	$content = file_get_contents('https://raw.githubusercontent.com/' . $payload['pull_request']['base']['repo']['full_name'] . '/tree/master/'. $path_to_script);
+	
 	create_comment($payload, 'Edit detected. Self updating... Here is my new code:\n```php\n' . $content . '\n```');
 
 	$code_file = fopen(basename($path_to_script), 'w');
