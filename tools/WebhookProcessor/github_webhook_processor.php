@@ -36,8 +36,6 @@ $validation_count = 1;
 
 //CONFIG END
 
-global $hookSecret;
-
 set_error_handler(function($severity, $message, $file, $line) {
 	throw new \ErrorException($message, 0, $severity, $file, $line);
 });
